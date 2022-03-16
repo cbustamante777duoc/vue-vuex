@@ -18,7 +18,7 @@ export default createStore({
         const result =  await response.json();
         //actualizo mutations con los nuevos datos desde la api
         commit('setMemes', result.data.memes);
-        console.log(result);
+        
       } catch (error) {
         console.log(error);
       }

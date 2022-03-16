@@ -9,8 +9,8 @@
     </select>
   </div>
   <div class="row">
-    <template v-for="meme in memes" :key="meme.id">
-      <Meme :meme="meme" />
+    <template v-for="item in memes" :key="item.id">
+      <Meme :meme="item" />
     </template>
   </div>
 </template>
@@ -35,6 +35,9 @@ export default {
       store.dispatch("getMemes");
     });
 
+    /**
+     *  funcion que cambia la cantidad de memes a mostar segun el select
+     */
     const changeTotalShow = (e) => {
       store.dispatch("getMemes",{
           total: e.target.value
